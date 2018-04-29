@@ -17,6 +17,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import com.qa.business.repository.AccountDBRepository;
 import com.qa.persistence.domain.Account;
 import com.qa.util.JSONUtil;
 
@@ -63,7 +64,7 @@ public class AccountDbTests {
 	public void testcreateAnAccount() {
 		Mockito.when(manager.find(Mockito.eq(Account.class), Mockito.anyString())).thenReturn(null); //works without mockito.when
 		String expectedAnswer = accountrepo.createAnAccount(mockObject);
-		String actual = "{\"message\":\"Account added\"}";
+		String actual = "{\"message\":\"account added\"}";
 		assertEquals(expectedAnswer, actual);
 	}
 	
@@ -92,7 +93,7 @@ public class AccountDbTests {
 	@Test
 	public void testgetAnAccount() {
 		Mockito.when(manager.find(Mockito.eq(Account.class), Mockito.anyLong())).thenReturn(util.getObjectForJSON(mockObject, Account.class));
-		String expectedAnswer = accountrepo.getAMovie(1L);
+		String expectedAnswer = accountrepo.getAnAccount(1L);
 		String actual = mockObject;
 		assertEquals(expectedAnswer, actual);
 	}
