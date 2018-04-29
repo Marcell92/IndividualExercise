@@ -28,7 +28,7 @@ public class AccountMapRepoTest {
 		assertEquals(repo.getAccountMap().size(), 0);
 
 		repo.deleteAnAccount(2L);
-		assertEquals(repo.deleteAnAccount(2L), "{\"message\":\"movie can't be deleted\"}");
+		assertEquals(repo.deleteAnAccount(2L), "{\"message\":\"account can't be deleted\"}");
 
 	}
 
@@ -44,7 +44,7 @@ public class AccountMapRepoTest {
 	public void testupdateAMovie() {
 
 		repo.updateAnAccount(Joe);
-		assertEquals(repo.updateAnAccount(Joe), "{\"message\": \"the movie has been updated\"}");
+		assertEquals(repo.updateAnAccount(Joe), "{\"message\": \"the account has been updated\"}");
 	}
 
 
